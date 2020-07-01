@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="assets/scripts/app.js" type="module" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="intro-container">
+            <h1>Welcome to Pokemon spell</h1>
+            <img src="https://pokeres.bastionbot.org/pokeball.gif" loading="eager" alt="">
+            <div class="setting">
+                <button class="easy" data-level="4">Easy</button>
+                <button class="medium" data-level="8">Medium</button>
+                <button class="hard"data-level="12">Hard</button>
+            </div>
+            <button class="main-btn">
+            Start
+            </button>
+        </div>
+        <div class="main-container">
+            <img src="" alt="" class="main-img" loading="eager">
+            <div class="secondary-container">
+             <h4 class="name"></h4>
+             <h4 class="userAttempt"></h4>
+            <div class="info-container">
+                <div class="input-container">
+                    <input type="text" class="user-input">
+                </div>
+            <img src="speaker.png" alt="" class="icon">
+            </div>
+            <div class="range-selectors">
+                <input type="range" min="-1" max="1" step="0.2"value="0" class="rate">
+                <input type="range" class="pitch" min="-1" max="1" step="0.2" value="0">
+            </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
