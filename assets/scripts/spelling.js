@@ -3,7 +3,6 @@ import { sleep } from './utilities/sleep.js';
 
 const userAttempt = document.querySelector('.userAttempt');
 
-
 export function checkSpellingIsCorrect(name, userInput) {  
         userInput =  userInput.trim();
         if ( userInput == name) {
@@ -22,9 +21,9 @@ const correct = () => {
         elem.value = '';  
         document.querySelector('.main-img').style.opacity = '0';
     });
+    
     sleep(1000)
-    .then(() => {
-        
+    .then(() => { 
         document.querySelector('body').style.background = '#181b1d';
         requestPokemon();
     })

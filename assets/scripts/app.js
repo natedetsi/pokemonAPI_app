@@ -34,7 +34,6 @@ async function loadPokemon() {
 
 // request pokemon called at start and after correct spelling
  export async function requestPokemon() {
-    
     await fetchPokemon();
     sleep(500).then(() => {
         intro.style.visibility = 'hidden';
@@ -52,13 +51,13 @@ async function loadPokemon() {
 // fetch randomly generated pokemon based on name length from api taken from sortedData array
 async function fetchPokemon() {
     try {
+        pokeImage.style.width = '64px';
+        pokeImage.src = '../../pokeball.svg';  
         const randomPokemon = ranNum(sortedData.length);
-        console.log(randomPokemon)
         const pokemon = sortedData[randomPokemon];
         sortedData = sortedData.filter(item => item !== pokemon);
         const pokemonID =  await fetch(pokemon.url).then(data => {return data.json()})
-        const imageSRC = `https://pokeres.bastionbot.org/images/pokemon/${pokemonID.id}.png`;
-        pokeImage.src = imageSRC;
+        await loadImage(`https://pokeres.bastionbot.org/images/pokemon/${pokemonID.id}.png`)
         const name = pokemon.name;    
         pokeName.innerText = name;
         speak(name);
@@ -69,6 +68,15 @@ async function fetchPokemon() {
     }
   
 
+}
+// dynamically load images 
+function loadImage(url) {
+    let newImage = new Image();
+    newImage.onload = function() {
+        pokeImage.src = this.src
+        pokeImage.style.width = '100%';
+    }
+    newImage.src = url
 }
 
 // fetch pokemon data from api 

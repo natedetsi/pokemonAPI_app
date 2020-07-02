@@ -5,7 +5,9 @@ body {
     color: #5ee9ff;
     caret-color: #5ee9ff
 }
-
+svg {
+    color: #5ee9ff;
+}
 button {
     position: relative;
     border: 1px solid #5ee9ff;
@@ -53,14 +55,21 @@ button:hover{
     width: 500px;
     z-index: 0;
 }
-
+.img-container {
+    height: 500px;
+    width:100%;
+}
 .main-img {
     position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     height: auto;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
-    transition: all 0.8s linear;
+    transition: opacity 0.8s linear;
     opacity: 0;
+    color:#5ee9ff;
 }
 .main-btn {
     position: relative;
