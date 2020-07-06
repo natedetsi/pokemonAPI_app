@@ -4,9 +4,13 @@ body {
     background: #181b1d;
     color: #5ee9ff;
     caret-color: #5ee9ff
+    font-family: 'Syncopate', sans-serif;
 }
 svg {
     color: #5ee9ff;
+}
+audio {
+    visibility: hidden;
 }
 button {
     position: relative;
@@ -89,12 +93,17 @@ button:hover{
     color: #000;
     cursor:pointer;
 }
-
+h1 {
+    font-family: 'Syncopate', sans-serif;
+}
 h4 {
     font-size: 2rem;
-    font-family: monospace;
+    font-family: 'Syncopate', sans-serif;
     text-align: left;
     color: #000;
+}
+.name {
+    display: none;
 }
 .userAttempt {
     color: #5ee9ff;

@@ -3,6 +3,7 @@ import { speak } from './speak.js';
 import { sleep } from './utilities/sleep.js';
 import { sort } from './utilities/sort.js';
 import { ranNum } from './utilities/ranNum.js';
+import { playAudio } from './play.js';
 
 
 
@@ -18,6 +19,7 @@ const settings = document.querySelectorAll('.setting button');
 let sortedData = '';
 let data = '';
 let level = 4;
+
 
 //load all pokemon on start of game
 async function loadPokemon() {
@@ -69,6 +71,11 @@ async function fetchPokemon() {
   
 
 }
+
+
+window.onload = () => {
+    
+}
 // dynamically load images 
 function loadImage(url) {
     let newImage = new Image();
@@ -96,12 +103,12 @@ btn.addEventListener('click', () => {
     requestPokemon();  
 });
 settings.forEach(elem => {
-    elem.addEventListener('click', (e) => {   
+    elem.addEventListener('click', (e) => {
+        playAudio();
         settings.forEach(item => {
             item.classList.remove('toggle');
         })
         level = e.target.dataset.level;
-        console.log(level)
         loadPokemon();
        e.target.classList.toggle('toggle');
 

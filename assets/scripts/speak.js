@@ -1,7 +1,7 @@
 
 const synth = window.speechSynthesis;
 let voices = [];
-    
+let pitch = 1;
 
 export const speak = (name) => {
     const sayName = new SpeechSynthesisUtterance(name);
@@ -12,8 +12,9 @@ export const speak = (name) => {
     }
 
     sayName.voice = voices[2]
-    sayName.rate = 0.75;
-    sayName.pitch = -1;
+    sayName.volume = 2;
+    sayName.rate = 0.8;
+    sayName.pitch = pitch;
 
     synth.speak(sayName);     
         
