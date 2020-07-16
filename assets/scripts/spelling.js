@@ -1,6 +1,7 @@
 import { requestPokemon } from './app.js';
 import { sleep } from './utilities/sleep.js';
 import { ranNum } from './utilities/ranNum.js'
+import { flashImages } from './utilities/flash.js';
 
 const userAttempt = document.querySelector('.userAttempt');
 const audio = document.querySelector('.loadMusic');
@@ -16,13 +17,13 @@ export function checkSpellingIsCorrect(name, userInput) {
 }
 
 const correct = () => {
-
+    const location = document.querySelector('.main-container');
     const celebration = ranNum(4);
     audio.src = `./assets/audio/correct/c${celebration}.mp3`;
     audio.play()
-
+    flashImages()
     userAttempt.textContent = '';
-    document.querySelector('body').style.background = 'green';
+    
     document.querySelectorAll('input').forEach(elem => {
         elem.value = '';  
         document.querySelector('.main-img').style.opacity = '0';

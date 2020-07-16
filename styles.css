@@ -37,7 +37,7 @@ button:hover{
     color: #000;
     cursor:pointer;  
 }
-.intro-container {
+.intro-container, .login-container {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -46,31 +46,46 @@ button:hover{
     font-family: monospace;
     z-index: 1;
 }
+.login-container input {
+    display: flex;
+    margin: 5px;
+    background: #000;
+    border: 1px solid #5ee9ff;
+    border-radius 10%;
+    color:#5ee9ff;
+    font-size: 1.5rem;
+    height: 25px;
+    width: 100%;
+}
 .setting {
     padding:10px;
     margin-bottom:20px;
 }
 .main-container {
     position: absolute;
+    background: url('areana.jpeg') no-repeat center;
+    background-size:contain;
     left: 50%;
     top:50%;
     transform: translate(-50%, -50%);
-    height: 800px;
-    width: 500px;
+    transition: all 0.5s ease;
+    height: 61.5%;
+    width: 90%;
+    min-width: 1200px;
+    visibility: hidden;
     z-index: 0;
 }
+
 .img-container {
-    height: 500px;
-    width:100%;
+    position: fixed;
+    margin:0 50% 0; 
+    height: 100px;
+    transform: translate(-50%);
+    width:40%;
 }
 .main-img {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
+    margin-top: 100px;
     width: 100%;
-    margin: 0 auto;
     transition: opacity 0.8s linear;
     opacity: 0;
     color:#5ee9ff;
@@ -97,7 +112,7 @@ h1 {
     font-family: 'Syncopate', sans-serif;
 }
 h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Syncopate', sans-serif;
     text-align: left;
     color: #000;
@@ -105,36 +120,52 @@ h4 {
 .name {
     display: none;
 }
-.userAttempt {
-    color: #5ee9ff;
-    transition: all ease 0.2s;
-    opacity: 0;
-}
 .secondary-container {
-    display: block;
     align-items: center;
     transition: all 1s ease;
     opacity: 0;
     visibility: hidden;
+    position: relative;
+    top:40%;
+    left: 50%;
+    height: 250px;
+    width: 400px;
+    padding-bottom: 50px;
+    transform: translate(-50%,-50%);
 }
-.info-container {
-    display: flex;
-    align-items: center;
+.input-container {
+    height: 200px;
+    position: relative;
+    bottom: 0;
 }
-.info-container input {
-    align-items: center;
+.input-container input {
+    position: relative;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%);
     width: 80%;
-    margin: 0 2px;
+    margin: 0 auto 10px;
     border:0;
     border-bottom: 1px solid #5ee9ff;
     background-color:rgba(0, 0, 0, 0);
     color: #5ee9ff;
     outline: none;
     font-family: monospace;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     
 }
+.userAttempt {
+    position: relative;
+    text-align: center;
+    height: 30px;
+    color: #5ee9ff;
+    margin: 5px auto;
+    transition: all ease 0.2s;
+    opacity: 0;
+}
 .icon {
+    position: relative;
+    left: 80%;
     border: 1px solid #5ee9ff;
     border-radius: 5px;
     height: 20px;
@@ -146,7 +177,6 @@ h4 {
 .icon:hover {
     background: #5ee9ff;
     cursor: pointer;
-    transform: scale(1.1);
     transition: all 0.3s ease;
 }
 .range-selectors {

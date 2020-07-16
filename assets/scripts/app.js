@@ -13,6 +13,7 @@ const pokeImage = document.querySelector('.main-img');
 const inputField = document.querySelector('.user-input');
 const sayNameBtn = document.querySelector('.icon');
 const intro = document.querySelector('.intro-container')
+const mainDisplay = document.querySelector('.main-container');
 const display = document.querySelector('.secondary-container');
 const settings = document.querySelectorAll('.setting button');
 
@@ -40,12 +41,12 @@ async function loadPokemon() {
     sleep(500).then(() => {
         intro.style.visibility = 'hidden';
         display.style.visibility = 'visible';
+        mainDisplay.style.visibility = 'visible';
         display.style.opacity = 1;
         pokeImage.style.opacity = 1;
         document.querySelector('.user-input').focus();
     })
-    
-    
+
 }
 
 
@@ -63,6 +64,7 @@ async function fetchPokemon() {
         const name = pokemon.name;    
         pokeName.innerText = name;
         speak(name);
+        // await setPokemon(pokeImage, pokemon);
     } catch (err) {
         console.log(err);
         if (sortedData.length === 0) {alert('You have completed the level'); return}
@@ -71,16 +73,18 @@ async function fetchPokemon() {
   
 
 }
+// function setPokemon(img, pokemon) {
+//     const image = document.querySelector('.pokemonImage');
+//     const name = document.querySelector('.pokemonName');
 
-
-window.onload = () => {
-    
-}
+//     image.src = img;
+//     name.textContent = pokemon;
+// }
 // dynamically load images 
 function loadImage(url) {
     let newImage = new Image();
     newImage.onload = function() {
-        pokeImage.src = this.src
+        pokeImage.src = this.src;
         pokeImage.style.width = '100%';
     }
     newImage.src = url
