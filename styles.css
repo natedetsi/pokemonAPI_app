@@ -84,7 +84,7 @@ button:hover{
     width:40%;
 }
 .main-img {
-    margin-top: 100px;
+    margin-top: 0px;
     width: 100%;
     transition: opacity 0.8s linear;
     opacity: 0;

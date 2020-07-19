@@ -73,14 +73,9 @@ async function fetchPokemon() {
   
 
 }
-// function setPokemon(img, pokemon) {
-//     const image = document.querySelector('.pokemonImage');
-//     const name = document.querySelector('.pokemonName');
 
-//     image.src = img;
-//     name.textContent = pokemon;
-// }
 // dynamically load images 
+
 function loadImage(url) {
     let newImage = new Image();
     newImage.onload = function() {
