@@ -6,9 +6,6 @@ body {
     caret-color: #5ee9ff
     font-family: 'Syncopate', sans-serif;
 }
-svg {
-    color: #5ee9ff;
-}
 audio {
     visibility: hidden;
 }
